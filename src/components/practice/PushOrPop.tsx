@@ -241,7 +241,7 @@ export const PushOrPop: React.FC = () => {
               <DragOverlay>
                 {activeChar ? (
                   <div className="w-16 h-16 rounded-xl border-2 flex items-center justify-center text-2xl font-bold font-mono bg-teal-500 border-teal-400 text-white shadow-2xl opacity-90 cursor-grabbing">
-                    {activeChar.charAt(0)}
+                    {currentStep?.char}
                   </div>
                 ) : null}
               </DragOverlay>

@@ -232,7 +232,12 @@ export const LearnMode: React.FC = () => {
                       }`}
                     >
                       {balanced ? '✓ Balanced!' : '✗ Unbalanced'}
-                      {!balanced && currentStack.length > 0 && (
+                      {!balanced && currentStepData?.action.type === 'mismatch' && (
+                        <p className="text-sm font-normal mt-1 text-red-600">
+                          Bracket mismatch detected
+                        </p>
+                      )}
+                      {!balanced && currentStepData?.action.type !== 'mismatch' && currentStack.length > 0 && (
                         <p className="text-sm font-normal mt-1 text-red-600">
                           Unclosed brackets remain: {currentStack.join(' ')}
                         </p>
